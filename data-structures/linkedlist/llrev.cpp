@@ -1,6 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+// singly linked list
+// insert- delete - display - reverse function
+// reverse k nodes
+
 class node{
     public:
     int data;
@@ -26,7 +31,7 @@ void deleteNode(node* &head, int val){
     if(head == NULL)
         return;
     if(head->next == NULL){
-        delete head;
+        delete head;    
         return;
     }
 
@@ -86,6 +91,30 @@ node* revRecurse(node* &head){
     return newhead;
 }
 
+//recurisve approach to reverse k nodes
+node* reverseKnodes(node* &head, int k){
+    if(head == NULL or k == 1)
+        return head;
+
+    node* preptr = NULL;
+    node* currentptr = head;
+    node* nextptr;
+
+    int count = 0;
+
+    while(currentptr != NULL and count < k){
+        nextptr = currentptr->next;
+        currentptr->next = preptr;
+        preptr = currentptr;
+        currentptr = nextptr;
+        count++;
+    }
+    if(nextptr != NULL)
+        head->next = reverseKnodes(nextptr,k);
+    
+    return preptr;
+}
+
 int main(){
     node* head = NULL;
 
@@ -95,9 +124,11 @@ int main(){
     insertHead(head,4);
     insertHead(head,3);
     displayllist(head);
- 
-    node* newhead = revRecurse(head);
+    int k;
+    cout << "Reverse nodes k :: ";
+    cin >> k;
+    node* newhead = reverseKnodes(head,k);
     displayllist(newhead);
-    
+
     return 0;
 }

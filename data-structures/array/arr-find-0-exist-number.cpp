@@ -11,13 +11,16 @@ vector<ll> splitNumber(ll n){
         int tmp = (int)s[i] - '0'; // 0 for numbers, ` for lower case, @ for upper case iirc
         vi.push_back(tmp); 
     }
-    return vi;
+  /*  
+    //splitting number without strings
 
-    /*
-    splitting number without strings
-    
-    
+    while(n > 0){
+        int tmp = n%10;
+        n /= 10;
+        vi.push_back(tmp);
+    }
     */
+    return vi;
 }
 
 int main(){

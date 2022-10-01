@@ -16,7 +16,7 @@ using namespace std;
     -1 3 5
     4 -1 3
     
-    resultant ::
+    resultant :: 
     1 2 3
     1 3 5
     4 2 3

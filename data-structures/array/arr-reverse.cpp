@@ -3,16 +3,11 @@ using namespace std;
 //given an array
 //writing a function to reverse it
 
-void reverseArr(int arr[],int n){
+void reverseArr(vector<int> &arr){
     int lowidx = 0;
-    int highidx = n-1;
+    int highidx = arr.size()-1;
     while (lowidx < highidx)
-    {   
-        /*
-        int temp = arr[lowidx];
-        arr[lowidx] = arr[highidx];
-        arr[highidx] = temp;
-        */        
+    {  
         swap(arr[lowidx], arr[highidx]);
         lowidx++;
         highidx--; 
@@ -22,18 +17,17 @@ int main(){
     int nSize;
     cout << "Number of Elements : ";
     cin >> nSize;
-    int nArr[nSize];
-
-    for(int i=0;i<nSize;i++)
-        cin >> nArr[i];
-    
-    cout << "Given array :: ";
-    for(int i=0;i<nSize;i++)
-        cout << nArr[i] << " ";
-    cout << "\nReversed array :: ";
-    reverseArr(nArr,nSize);
-    for(int i=0;i<nSize;i++)
-        cout << nArr[i] << " ";
-    cout << endl;
+    vector<int> given;
+    cout << "Given :: ";
+    for(int i=0;i<nSize;i++){
+        int tmp;
+        cin >> tmp;
+        given.push_back(tmp);
+    }
+   
+    cout << "Reversed array :: ";
+    reverseArr(given);
+    for(auto x : given)
+        cout << x << " ";
     return 0;
 }

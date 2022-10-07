@@ -1,49 +1,40 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-//selection sort is the basic version of heap sort
-//not stable
-//but it does less memory writes
-
-// set minidx to 0
-// traverse array to find min
-// if traverse val smaller than minidx then swap
-// increment minidx
-// loop
-
-void selsort(vector<int> &arr){
-    for(int i=0;i<arr.size()-1;i++){
-        int min = i;
-        for(int j=i+1;j<arr.size();j++){
-            if(arr[j] < arr[min])
-                min = j;
-        swap(arr[min],arr[i]);
+/*
+    find minimum value and swap it to beginning
+*/
+void selectionSort(vector<int> &given){
+    int swapIdx;
+    for(int i=0;i<given.size()-1;i++){
+        swapIdx = i;
+        for(int j=i+1;j<given.size();j++){
+            if(given[j] < given[swapIdx]){
+                //swap(given[i], given[swapIdx]);
+                swapIdx = j;
+            }
+        }
+        if(swapIdx != i){
+            swap(given[swapIdx],given[i]);
         }
     }
-
 }
-
- 
 int main(){
     vector<int> given;
-    int nSize;
+    int n;
+    cout << "Number of elements :: ";
+    cin >> n;
 
-    cout << "Size of the array :: ";
-    cin >> nSize;
-    cout << "Elements :: ";
-    for(int i=0; i<nSize; i++){
-        int temp;
-        cin >> temp;
-        given.push_back(temp);
+    cout << "Given :: ";
+    for(int i=0;i<n;i++){
+        int tmp;
+        cin >> tmp;
+        given.push_back(tmp);
     }
-    cout << "Before selection sort :: ";
-    for(int i=0; i<nSize; i++)
-        cout << given[i] << " ";
-    
-    selsort(given);
 
-    cout << "'\nAfter selection sort :: ";
-    for(int i=0; i<nSize; i++)
-        cout << given[i] << " ";
+    cout << "Sorted Result :: ";
+    selectionSort(given);
+    for(auto x : given)
+        cout << x << " ";
+    
     return 0;
 }

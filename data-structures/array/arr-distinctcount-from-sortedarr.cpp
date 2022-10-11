@@ -13,7 +13,6 @@ int distinctCount(int arr[],int n){
     }
     return res;
 }
-
 int main(){
     int nSize;
     cout << "Size of the input array :: ";

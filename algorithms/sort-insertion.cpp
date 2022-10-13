@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 void sortInsertion(vector<int> &given){
     for(int i=1;i<given.size();i++){
         int now = given[i];

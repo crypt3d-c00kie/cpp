@@ -31,8 +31,7 @@ int main(){
         cin >> tmp;
         given.push_back(tmp);
     }
-    //given = {1,2,3,4,5};
     freqCount(given);
-
+    
     return 0;
 }

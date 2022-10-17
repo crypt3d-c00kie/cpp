@@ -1,14 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int findLargest(vector<int> &given)
-{
-    int res=INT_MIN;
+int findLargest(vector<int> &given){
+    int res=given[0];
     for (int i=0;i<given.size();i++)
-        if(given[i] > given[res])
-            res = i;
+        if(res < given[i])
+            res = given[i];
 
-    return given[res];
+    return res;
 }
 int main()
 {
@@ -22,11 +21,6 @@ int main()
         cin >> tmp;
         given.push_back(tmp);
     }
-        
-/*  printing array
-    for(int i=0;i<nSize;i++)
-        cout << nArr[i] << " ";
-*/
     cout << "The largest element ::  " << findLargest(given) << endl;
 
     return 0;

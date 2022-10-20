@@ -11,14 +11,12 @@ int consecutiveOnes(vector<int> &given){
                 visited.push_back(count);
         }
         else{
-            //cout << "inside loop :: " << count << endl;
             visited.push_back(count);
             count = 0;
         }
     }
     int maxCount = INT_MIN;
     for(auto x : visited){
-        //cout << x << " | ";
         maxCount = max(maxCount, x);
     }
     return maxCount;

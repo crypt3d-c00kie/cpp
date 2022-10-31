@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int minsumSolve(vector<int> &given){
+int minsumSolve(vector<int> &given){ 
     int sum = 0;
     for(int i=0;i<given.size();i++){
         for(int j=i+1;j<given.size();j++){

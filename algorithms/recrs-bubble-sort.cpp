@@ -27,7 +27,6 @@ int main(){
         cin >> tmp;
         given.push_back(tmp);
     }
-
     bubbleSort(given, n);
     cout << "Resultant :: ";
     for(auto x : given)

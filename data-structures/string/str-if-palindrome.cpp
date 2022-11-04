@@ -16,7 +16,7 @@ bool isPalindrome(string &x){
 }
 int main(){
     string s1;
-    cout << "Type the string :: ";
+    cout << "Type the string :: "; 
     cin >> s1;
 
     if(isPalindrome(s1))

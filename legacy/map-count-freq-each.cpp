@@ -5,7 +5,6 @@ void countFrequency(vector<int> &given){
     map<int,int> m1;
     for(int i=0;i<given.size();i++)
         m1[given[i]]++;
-    
     for(auto x : m1)
         cout << x.first << " :: " << x.second << endl;
     

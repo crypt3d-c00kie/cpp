@@ -18,7 +18,6 @@ int minsumSolve(vector<int> &given){
 int main(){
     int n;
     vector<int> given;
-
     cout << "Number of elements : ";
     cin >> n;
     cout << "Elements :: ";

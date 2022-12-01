@@ -10,7 +10,7 @@ using namespace std;
     reassign -1 = val of minrow
     transpose matrix
     print matrix
-
+ 
     input the matrix ::
     1 2 -1
     -1 3 5

@@ -13,19 +13,16 @@ int solve(vector<int>& arr){
     return nProfit;
 } 
 int main(){
-    vector<int> given;
+    
     int profit;
     int nSize;
     cout << "Enter number of elements : ";
     cin >> nSize;
-    
+    vector<int> given(nSize);
     cout << "Stock prices : ";
-    for(int i=0;i<nSize;i++){
-        int tmp;
-        cin >> tmp;
-        given.push_back(tmp);
+    for(auto& x : given)
+        cin >> x;
 
-    }
     profit = solve(given);
     cout << "maxProfit :: " << profit << endl;
     return 0;

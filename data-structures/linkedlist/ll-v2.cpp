@@ -49,6 +49,19 @@ class linkedList{
         }
         cout << endl;
     }
+    void reverseList(){
+        node* current = head;
+        node* prev = NULL;
+        node* next = NULL;
+
+        while(current != NULL){
+            next = current->next;
+            current->next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
 
     void deleteFront(int val){
         node* current = head;
@@ -135,6 +148,8 @@ class linkedList{
             cout << "Cycle doesn't exist" << endl;
         }
     }
+
+   
 };
 
 int main(){
@@ -150,11 +165,13 @@ int main(){
     // cin >> choice;
 
     // given.searchfor(choice);
-    cout << "Before call :: ";
-    given.hasCycle();
-    given.createCycle(7);
-    cout << "After call :: ";
-    given.hasCycle();
+    // cout << "Before call :: ";
+    // given.hasCycle();
+    // given.createCycle(7);
+    // cout << "After call :: ";
+    // given.hasCycle();
+    given.reverseList();
+    given.printList();
 
     return 0;
 }

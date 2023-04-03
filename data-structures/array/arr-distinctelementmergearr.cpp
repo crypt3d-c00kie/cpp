@@ -2,7 +2,7 @@
 using namespace std;
 //this program must merge two arrays
 //the final array must have non-dupes
-vector<int> uniqueMergeTwo(vector<int> &a,vector<int> &b){
+vector<int> uniqueMergeTwo(vector<int> &a,vector<int> &b){ 
     vector<int> ans,ans2;
     //merge(a.begin(),a.end(),b.begin(),b.end(),ans.begin());
     ans.insert(ans.begin(),a.begin(),a.end());

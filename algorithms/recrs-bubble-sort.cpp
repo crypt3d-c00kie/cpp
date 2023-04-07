@@ -30,7 +30,7 @@ int main(){
     bubbleSort(given, n);
     cout << "Resultant :: ";
     for(auto x : given)
-        cout << x << " ";
+        cout << x << " "; 
 
     return 0;
 }
